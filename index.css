@@ -1,4 +1,6 @@
-body {
-	display: grid;
-	grid-template-columns: 2fr 8fr
+#books-outer-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 }
