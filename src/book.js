@@ -37,14 +37,21 @@ class Book {
   createUsersView() {
     let userContainer = '';
     this.users.forEach( user => {
+      this.checkUserLikes(user)
       userContainer += `
         <div class="user">
-          <span>${user.id}</span>
-          <span>${user.username}</span>
-          <span><button>like</button></span>
+          <span>${user.username}</span>:
+          <span>${this.checkUserLikes(user)} likes</span>
+          <p><button class="like-button" data-id="${user.id}">like</button></p>
         </div>
       `
     });
     return userContainer;
+  }
+
+  checkUserLikes(user) {
+    if(user._books.hasOwnProperty(this.title)) {
+      return user._books[this.title];
+    }
   }
 }

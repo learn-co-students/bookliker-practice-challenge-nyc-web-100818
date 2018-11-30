@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
     books.getBooksFromApi()
     .then(() => {
       booksContainer.innerHTML = books.renderView();
+      const bookLike = Array.from(document.getElementsByClassName("like-button"));
+      console.log(bookLike);
     });
   }
 
